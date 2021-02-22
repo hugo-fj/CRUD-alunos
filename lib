@@ -1,0 +1,20 @@
+const mysql = require('mysql');
+
+// Conexão com Banco de Dados mysql
+const conexao = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '123456',
+    database: 'aluno'
+});
+
+// connect to database
+conexao.connect(function(erro) {
+    if (erro) {
+      console.error('Erro ao tentar se conectar ao Banco de dados: '+ erro);
+      return;
+    }
+    console.log('Conexão realizada com sucesso ao Banco de Dados');
+  });
+
+  module.exports = conexao;
